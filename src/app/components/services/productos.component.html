@@ -1,0 +1,57 @@
+<section class="ftco-section">
+    <div class="container">
+        <div class="row d-flex">
+
+            <div *ngFor="let p of productos" class="col-md-4 d-flex ftco-animate">
+                <div class="blog-entry align-self-stretch">
+                    <!-- <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_1.jpg');">
+                    </a> -->
+                    <img class="block-20" [src]="p.fotoUrl">
+                    <div class="text py-4 d-block">
+                        <div class="meta">
+                            <div><a>Precio :  S/  </a></div>
+                            <div><a>{{ p.precio  }}</a></div>
+                            <div></div>
+                            <div><a href="#" class="meta-chat m-xl-2"><span class="icon-chat"></span> 3</a></div>
+                        </div>
+                        <h3 class="heading mt-2">
+                            <a>{{ p.titulo }}</a>
+                        </h3>
+                        <p>
+                            {{ p.DesBreve }}
+                        </p>
+                        <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                            <a [routerLink]="['/reserva']" class="btn btn-block btn-outline-info px-4 py-3">
+                                REALIZAR RESERVA
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 ftco-animate">
+                <a href="#" class="work-entry">
+                    <img src="assets/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="info d-flex align-items-center">
+                        <div>
+                            <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                                <span class="icon-search"></span>
+                            </div>
+                            <h3>Lips Makeover</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</section>> -->

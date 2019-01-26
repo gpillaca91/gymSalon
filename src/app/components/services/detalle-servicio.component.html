@@ -1,0 +1,56 @@
+<section class="ftco-section">
+    <div class="container">
+
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Categorias</h2>
+                <span class="work-category">
+                  <div class="tagcloud">
+                      <span *ngFor="let c of categorias" class="px-2 ">
+                          <a class="tag-cloud-link active"  (click)="productos(c.id)"  >
+                            {{ c.titulo }}
+                          </a>
+                        </span>
+            </div>
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- <div class="col-md-3 ftco-animate">
+            </div>
+            <div class="col-md-6 ftco-animate">
+
+                <div class="sidebar-box ftco-animate">
+                    <div class="categories">
+                        <h3>Categorias</h3>
+                        <li *ngFor="let c of categorias">
+                            <a [routerLink]="['/productos',c.id]">{{ c.titulo }} <span>(12)</span></a>
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+            </div> -->
+        <!-- <div *ngFor="let c of categorias" class="col-md-4 ftco-animate">
+                <a class="work-entry">
+                    <img src="assets/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
+                    <div class="info d-flex align-items-center">
+                        <div>
+                            <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                                <span class="icon-search"></span>
+                            </div>
+                            <h3>{{ c.titulo }}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+
+
+    </div>
+
+
+
+    </div>
+</section>
