@@ -7,8 +7,9 @@ import { ProductoService } from './servicios/producto.service';
 })
 export class AppComponent {
   title = 'app';
-  constructor(public _ps:ProductoService){
 
+  constructor(public _ps:ProductoService){
+      
   }
 
 }

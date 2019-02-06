@@ -17,7 +17,7 @@ const router:Routes = [
     { path: 'services' , component: ServicesComponent },
     { path: 'categoriaServicio/:codigo' , component: DetalleServicioComponent },
     { path: 'productos/:id' , component: ProductosComponent },
-    { path: 'reserva' , component: ReservaComponent },
+    { path: 'reserva/:codigo' , component: ReservaComponent },
     { path: '**', pathMatch:'full', redirectTo:'home'  },
     { path: '', pathMatch:'full', redirectTo:'home'  }
 ];

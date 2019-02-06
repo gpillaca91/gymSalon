@@ -1,4 +1,6 @@
-<section class="ftco-section">
+<app-loader *ngIf="!_productoService.cargoData"></app-loader>
+
+<section class="ftco-section" *ngIf="_productoService.cargoData">
     <div class="container">
         <div class="row">
 

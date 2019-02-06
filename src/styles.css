@@ -3,3 +3,8 @@
 .puntero {
     cursor: pointer
 }
+
+.invalid-feedback {
+    font-weight: 560;
+    font-size: 78%;
+}

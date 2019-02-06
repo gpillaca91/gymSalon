@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
+// formularios
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
 // rutas
 import { AppRoutingModule } from './router.module';
 
@@ -16,6 +21,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { DetalleServicioComponent } from './components/services/detalle-servicio.component';
 import { ProductosComponent } from './components/services/productos.component';
 import { ReservaComponent } from './components/services/reserva.component';
+import { LoaderComponent } from './components/shared/loader/loader.component';
 
 
 @NgModule({
@@ -30,12 +36,16 @@ import { ReservaComponent } from './components/services/reserva.component';
     FooterComponent,
     DetalleServicioComponent,
     ProductosComponent,
-    ReservaComponent
+    ReservaComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    HttpModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
     
   ],
   providers: [],

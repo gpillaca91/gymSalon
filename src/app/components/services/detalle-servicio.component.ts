@@ -9,6 +9,7 @@ import { ProductoService } from '../../servicios/producto.service';
 export class DetalleServicioComponent implements OnInit {
 
   categorias:any[]=[];
+  cargoData= false;
   constructor( private activatedRoute:ActivatedRoute
               ,private _ps:ProductoService
               ,private route:Router ) { 
@@ -19,8 +20,9 @@ export class DetalleServicioComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       params=>{
         this._ps.cargarCategoriaServicios( params['codigo'] ).subscribe(
-          (data:any[])=>{
+          (data:any)=>{
             this.categorias = data;
+            this.cargoData = true;
             console.log(data);
           }
         );

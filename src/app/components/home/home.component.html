@@ -107,169 +107,171 @@
         </div>
     </div>
 </section> -->
-
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <h2 class="mb-4">Ultimas Tendencias</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+<app-loader *ngIf="!cargarData"></app-loader>
+<div *ngIf="cargarData">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h2 class="mb-4">Ultimas Tendencias</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 ftco-animate">
+                    <a href="#" class="work-entry">
+                        <img src="assets/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
+                        <div class="info d-flex align-items-center">
+                            <div>
+                                <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                                <h3>Lips Makeover</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 ftco-animate">
+                    <a href="#" class="work-entry">
+                        <img src="assets/images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
+                        <div class="info d-flex align-items-center">
+                            <div>
+                                <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                                <h3>Hair Style</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 ftco-animate">
+                    <a href="#" class="work-entry">
+                        <img src="assets/images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
+                        <div class="info d-flex align-items-center">
+                            <div>
+                                <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                                    <span class="icon-search"></span>
+                                </div>
+                                <h3>Makeup</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 ftco-animate">
-                <a href="#" class="work-entry">
-                    <img src="assets/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
-                    <div class="info d-flex align-items-center">
-                        <div>
-                            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                                <span class="icon-search"></span>
-                            </div>
-                            <h3>Lips Makeover</h3>
+    </section>
+    <!-- Marcas Reconocidas -->
+    <section class="ftco-partner bg-light">
+        <div class="container">
+            <div class="row partner justify-content-center">
+                <div class="col-md-10">
+
+
+                    <div class="row">
+
+                        <div class="col-md-3 ftco-animate">
+                            <a href="#" class="partner-entry">
+                                <img src="assets/images/partner-1.jpg" class="img-fluid" alt="Colorlib template">
+                            </a>
+                        </div>
+                        <div class="col-md-3 ftco-animate">
+                            <a href="#" class="partner-entry">
+                                <img src="assets/images/partner-2.jpg" class="img-fluid" alt="Colorlib template">
+                            </a>
+                        </div>
+                        <div class="col-md-3 ftco-animate">
+                            <a href="#" class="partner-entry">
+                                <img src="assets/images/partner-3.jpg" class="img-fluid" alt="Colorlib template">
+                            </a>
+                        </div>
+                        <div class="col-md-3 ftco-animate">
+                            <a href="#" class="partner-entry">
+                                <img src="assets/images/partner-4.jpg" class="img-fluid" alt="Colorlib template">
+                            </a>
                         </div>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-md-4 ftco-animate">
-                <a href="#" class="work-entry">
-                    <img src="assets/images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
-                    <div class="info d-flex align-items-center">
+        </div>
+    </section>
+    <!--END Marcas Reconocidas -->
+
+    <!--Precios tipos -->
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h2 class="mb-4">PRECIOS DE BELLEZA</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
                         <div>
-                            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                                <span class="icon-search"></span>
-                            </div>
-                            <h3>Hair Style</h3>
+                            <h3 class="mb-4">Basic</h3>
+                            <p><span class="price"> S/ 24.50</span> <span class="per">/ one trip</span></p>
                         </div>
+                        <ul>
+                            <li>Nail Cutting &amp; Styling</li>
+                            <li>Hair Trimming</li>
+                            <li>Spa Therapy</li>
+                            <li>Body Massage</li>
+                            <li>Manicure</li>
+                        </ul>
+                        <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-4 ftco-animate">
-                <a href="#" class="work-entry">
-                    <img src="assets/images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
-                    <div class="info d-flex align-items-center">
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
                         <div>
-                            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                                <span class="icon-search"></span>
-                            </div>
-                            <h3>Makeup</h3>
+                            <h3 class="mb-4">Standard</h3>
+                            <p><span class="price">S/ 34.50</span> <span class="per">/ one trip</span></p>
                         </div>
+                        <ul>
+                            <li>Nail Cutting &amp; Styling</li>
+                            <li>Hair Trimming</li>
+                            <li>Spa Therapy</li>
+                            <li>Body Massage</li>
+                            <li>Manicure</li>
+                        </ul>
+                        <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
                     </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Marcas Reconocidas -->
-<section class="ftco-partner bg-light">
-    <div class="container">
-        <div class="row partner justify-content-center">
-            <div class="col-md-10">
-
-
-                <div class="row">
-
-                    <div class="col-md-3 ftco-animate">
-                        <a href="#" class="partner-entry">
-                            <img src="assets/images/partner-1.jpg" class="img-fluid" alt="Colorlib template">
-                        </a>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry active pb-5 text-center">
+                        <div>
+                            <h3 class="mb-4">Premium</h3>
+                            <p><span class="price">S/ 54.50</span> <span class="per">/ one trip</span></p>
+                        </div>
+                        <ul>
+                            <li>Nail Cutting &amp; Styling</li>
+                            <li>Hair Trimming</li>
+                            <li>Spa Therapy</li>
+                            <li>Body Massage</li>
+                            <li>Manicure</li>
+                        </ul>
+                        <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
                     </div>
-                    <div class="col-md-3 ftco-animate">
-                        <a href="#" class="partner-entry">
-                            <img src="assets/images/partner-2.jpg" class="img-fluid" alt="Colorlib template">
-                        </a>
-                    </div>
-                    <div class="col-md-3 ftco-animate">
-                        <a href="#" class="partner-entry">
-                            <img src="assets/images/partner-3.jpg" class="img-fluid" alt="Colorlib template">
-                        </a>
-                    </div>
-                    <div class="col-md-3 ftco-animate">
-                        <a href="#" class="partner-entry">
-                            <img src="assets/images/partner-4.jpg" class="img-fluid" alt="Colorlib template">
-                        </a>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="pricing-entry pb-5 text-center">
+                        <div>
+                            <h3 class="mb-4">Platinum</h3>
+                            <p><span class="price">S/ 9.50</span> <span class="per">/ one trip</span></p>
+                        </div>
+                        <ul>
+                            <li>Nail Cutting &amp; Styling</li>
+                            <li>Hair Trimming</li>
+                            <li>Spa Therapy</li>
+                            <li>Body Massage</li>
+                            <li>Manicure</li>
+                        </ul>
+                        <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!--END Marcas Reconocidas -->
-
-<!--Precios tipos -->
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <h2 class="mb-4">PRECIOS DE BELLEZA</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 ftco-animate">
-                <div class="pricing-entry pb-5 text-center">
-                    <div>
-                        <h3 class="mb-4">Basic</h3>
-                        <p><span class="price"> S/ 24.50</span> <span class="per">/ one trip</span></p>
-                    </div>
-                    <ul>
-                        <li>Nail Cutting &amp; Styling</li>
-                        <li>Hair Trimming</li>
-                        <li>Spa Therapy</li>
-                        <li>Body Massage</li>
-                        <li>Manicure</li>
-                    </ul>
-                    <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <div class="pricing-entry pb-5 text-center">
-                    <div>
-                        <h3 class="mb-4">Standard</h3>
-                        <p><span class="price">S/ 34.50</span> <span class="per">/ one trip</span></p>
-                    </div>
-                    <ul>
-                        <li>Nail Cutting &amp; Styling</li>
-                        <li>Hair Trimming</li>
-                        <li>Spa Therapy</li>
-                        <li>Body Massage</li>
-                        <li>Manicure</li>
-                    </ul>
-                    <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <div class="pricing-entry active pb-5 text-center">
-                    <div>
-                        <h3 class="mb-4">Premium</h3>
-                        <p><span class="price">S/ 54.50</span> <span class="per">/ one trip</span></p>
-                    </div>
-                    <ul>
-                        <li>Nail Cutting &amp; Styling</li>
-                        <li>Hair Trimming</li>
-                        <li>Spa Therapy</li>
-                        <li>Body Massage</li>
-                        <li>Manicure</li>
-                    </ul>
-                    <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-                </div>
-            </div>
-            <div class="col-md-3 ftco-animate">
-                <div class="pricing-entry pb-5 text-center">
-                    <div>
-                        <h3 class="mb-4">Platinum</h3>
-                        <p><span class="price">S/ 9.50</span> <span class="per">/ one trip</span></p>
-                    </div>
-                    <ul>
-                        <li>Nail Cutting &amp; Styling</li>
-                        <li>Hair Trimming</li>
-                        <li>Spa Therapy</li>
-                        <li>Body Massage</li>
-                        <li>Manicure</li>
-                    </ul>
-                    <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Order now</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 <!--END Precios tipos -->

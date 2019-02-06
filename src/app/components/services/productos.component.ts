@@ -10,7 +10,7 @@ import { ProductoService } from '../../servicios/producto.service';
 export class ProductosComponent implements OnInit {
 
   productos:any[];
-
+  cargoData= false;
   constructor( private route:ActivatedRoute,
                public _ps:ProductoService) { }
 
@@ -20,6 +20,7 @@ export class ProductosComponent implements OnInit {
         this._ps.mostrarProductos( data['id'] ).subscribe(
           (info:any[])=>{
             this.productos = info;
+            this.cargoData = true;
               console.log(info);
           }
         );

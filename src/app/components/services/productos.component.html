@@ -1,4 +1,5 @@
-<section class="ftco-section">
+<app-loader *ngIf="!cargoData"></app-loader>
+<section *ngIf="cargoData" class="ftco-section">
     <div class="container">
         <div class="row d-flex">
 
@@ -6,22 +7,25 @@
                 <div class="blog-entry align-self-stretch">
                     <!-- <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_1.jpg');">
                     </a> -->
-                    <img class="block-20" [src]="p.fotoUrl">
-                    <div class="text py-4 d-block">
+
+                    <div class="text-sm-center py-3">
+                        <img [src]="p.fotoUrl" class="img-fluid" alt="Colorlib Template">
                         <div class="meta">
                             <div><a>Precio :  S/  </a></div>
                             <div><a>{{ p.precio  }}</a></div>
                             <div></div>
-                            <div><a href="#" class="meta-chat m-xl-2"><span class="icon-chat"></span> 3</a></div>
+                            <div><a class="meta-chat m-xl-2"><span class="icon-chat"></span> 3</a></div>
                         </div>
-                        <h3 class="heading mt-2">
-                            <a>{{ p.titulo }}</a>
-                        </h3>
+                        <h6 class="heading mt-1">
+                            <a><strong> {{ p.titulo }}</strong></a>
+                        </h6>
                         <p>
-                            {{ p.DesBreve }}
+                            {{ p.DesBreve | slice:0:50 }} <strong> <span>...ver mas</span> </strong>
                         </p>
+
+
                         <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-                            <a [routerLink]="['/reserva']" class="btn btn-block btn-outline-info px-4 py-3">
+                            <a [routerLink]="['/reserva', p.productoId]" class="btn btn-block btn-outline-info px-4 py-3">
                                 REALIZAR RESERVA
                             </a>
                         </p>
