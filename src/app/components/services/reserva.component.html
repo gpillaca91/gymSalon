@@ -1,16 +1,16 @@
-<section class="ftco-section ftco-appointment">
+<section class="ftco-section ftco-appointment animated fadeIn">
 
-    <div class="overlay">
-        <p class="text-right text-justify my-2 mx-3">
-            <a [routerLink]="['/productos', id ]" class="btn btn-white btn-outline-white py-1 px-2">
-                Regresa..
-            </a>
+    <div class="overlay animated fadeInDown fast">
+        <p class="text-center my-5 mx-lg-5">
+            <a [routerLink]="['/services']" class="btn btn-info-gm py-1 px-2">
+                << Atras </a>
         </p>
     </div>
-    <div class="container">
+    <div class="container animated fadeInUpMenu">
 
         <div class="row d-md-flex align-items-center">
             <!-- Informacion de Atencion -->
+
             <div class="col-md-6 d-flex align-self-stretch ftco-animate">
                 <div class="appointment-info text-center p-5">
                     <div class="mb-4">
@@ -32,7 +32,7 @@
             <!--Formulario de Reserva-->
             <div class="col-md-6 appointment pl-md-5 ftco-animate">
 
-                <h3 class="mb-3">[ Reservas ]</h3>
+                <h3 class="mb-3">Realizar - Reservas </h3>
 
                 <form [formGroup]="forma" (ngSubmit)="enviarForm()" class="appointment-form">
                     <div class="row form-group d-flex">
@@ -86,12 +86,89 @@
                         <textarea cols="30" rows="3" class="form-control" placeholder="Comentario/mensaje" [(ngModel)]="reserva.mensaje" formControlName="mensaje"></textarea>
                     </div>
                     <div class="form-group">
+                        <p>
+                            <button class="btn btn-info-gm" type="button" data-toggle="collapse" data-target="#credito" aria-expanded="false" aria-controls="credito">
+                                          Opciones de Pago / Tarjetas de Credito
+                            </button>
+                            <!-- <button class="btn btn-info-gm" type="button" data-toggle="collapse" data-target="#efectivo" aria-expanded="false" aria-controls="efectivo">
+                                    Deposito Efectivo
+                      </button> -->
+                        </p>
 
-                        <input type="submit" [disabled]="!forma.valid" value="Confirmar Reserva" class="btn btn-white btn-outline-white py-3 px-4">
+                        <!-- <div class="collapse multi-collapse" id="efectivo">
+                            <h5>Pago efectivo</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro distinctio rem blanditiis architecto dolore nulla deserunt tempore itaque dolorum tenetur molestiae, consequuntur nam quasi. Magni perferendis incidunt numquam
+                                magnam? Exercitationem?</p>
+                        </div> -->
+                        <div class="collapse multi-collapse" id="credito">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <img src="assets/images/pago/pagos.png" class="img-fluid" alt="Colorlib template">
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="container">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <select class="form-control color-fondo" id="cuotas">
+                                                        <option class="color-fondo"># Cuotas</option>    
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <select class="form-control color-fondo" id="cuotas">
+                                                        <option class="color-fondo">Tipo de tarjeta</option>    
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <!-- [(ngModel)]="reserva.numTarjeta" formControlName="numTarjeta" -->
+                                            <input type="text" class="form-control" placeholder="Numero de la tarjeta">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="text" class="form-control" placeholder="Codigo CVV (3-4 digitos en la parte trasera de la tarjeta)">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <select class="form-control color-fondo">
+                                                                <option class="color-fondo">Mes de expiracion</option>    
+                                                    </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <select class="form-control color-fondo">
+                                                                <option class="color-fondo">Año de expiracion</option>    
+                                                    </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+
+                                            <input type="text" class="form-control" placeholder="Nombre del titular" [(ngModel)]="reserva.titular" formControlName="titular">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input type="text" class="form-control" placeholder="Apellido del titular">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- aqui -->
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <input type="submit" [disabled]="!forma.valid" value="Confirmar Pago" class="btn btn-white btn-outline-white py-3 px-4">
                     </div>
 
                 </form>
-                {{ forma.valid }}
+                <!-- {{ forma.valid }} -->
             </div>
 
 

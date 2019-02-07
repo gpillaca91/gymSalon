@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl , Validators } from '@angular/forms';
 import { Reserva } from './../../interfaces/reserva.interface';
 import { ProductoService } from '../../servicios/producto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 declare var jQuery:any;
 declare var $:any;
-
+declare var swal:any;
 
 @Component({
   selector: 'app-reserva',
@@ -25,9 +25,10 @@ export class ReservaComponent implements OnInit {
      contacto: '',
      mensaje:'',
      productoId:'',
+     titular:'',
    }; 
    
-  constructor( public _ps:ProductoService,private ar:ActivatedRoute  ) { 
+  constructor( public _ps:ProductoService,private ar:ActivatedRoute,private route:Router  ) { 
     this.crearControles();
 
     this.ar.params.subscribe(data=>{
@@ -49,25 +50,39 @@ export class ReservaComponent implements OnInit {
       'correo': new FormControl('',[Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'),Validators.required]),
       'fecha': new FormControl('',Validators.required),
       'contacto': new FormControl('',[Validators.required,Validators.maxLength(9),Validators.minLength(7)] ),
-      'mensaje': new FormControl('')
+      'mensaje': new FormControl(''),
+      'titular': new FormControl(''),
     });
     this.forma.get('nombres').setValidators(Validators.required);
+    this.forma.get('titular').setValidators(Validators.required);
   }
 
 
   enviarForm(){
     console.log(this.forma);
     // console.log('Valores', this.forma.value );
-  
     this._ps.guardarReserva( this.reserva ).subscribe(
       data=>{
         console.log('id Reserva',data['name']);
       }
     );
+    this.mostrarModal();
+    setTimeout(()=>{
+      this.route.navigate(['/home']);
+    },3000);
     console.log('Reserva : ',this.reserva);
     // this.forma.reset();
+    
+  }  
+  mostrarModal(){
+    swal({
+      title: 'Correcto!',
+      text: 'Su reserva fue registrada!',
+      icon: 'success',
+      buttons:false,
+      timer: 2500,
+    });
   }
-
 
   mostrarCalendario(){
     

@@ -1,14 +1,21 @@
 <app-loader *ngIf="!cargoData"></app-loader>
-<section *ngIf="cargoData" class="ftco-section">
+
+<section *ngIf="cargoData" class="ftco-section animated fadeIn fast">
     <div class="container">
 
+        <div class="row">
+            <p>
+                <button [routerLink]="['/services']" class="btn btn-info-gm mx-1 py-1"><< Atras</button>
+            </p>
+        </div>
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center ftco-animate">
+
                 <h2 class="mb-4">Categorias</h2>
                 <span class="work-category">
                   <div class="tagcloud">
-                      <span *ngFor="let c of categorias" class="px-2 ">
-                          <a class="tag-cloud-link active"  (click)="productos(c.id)"  >
+                      <span *ngFor="let c of categorias" class="px-2 animated fadeIn fast">
+                          <a class="tag-cloud-link active puntero"  (click)="mostrarProductos(c.id)"  >
                             {{ c.titulo }}
                           </a>
                         </span>
@@ -17,38 +24,38 @@
         </div>
     </div>
 
-    <div class="row">
-        <!-- <div class="col-md-3 ftco-animate">
-            </div>
-            <div class="col-md-6 ftco-animate">
+    <div class="alert alert-danger animated fadeInUp text-center" role="alert" *ngIf="!productos">
+        <strong>
+            SERVICIOS AGOTADOS !!! <br>
+            <small>Porfavor seleccione otra categoria para poder continuar con la reseva.</small> 
+        </strong>
+    </div>
 
-                <div class="sidebar-box ftco-animate">
-                    <div class="categories">
-                        <h3>Categorias</h3>
-                        <li *ngFor="let c of categorias">
-                            <a [routerLink]="['/productos',c.id]">{{ c.titulo }} <span>(12)</span></a>
-                        </li>
-
+    <div class="row d-flex animated" *ngIf="productos">
+        <div *ngFor="let p of productos" class="col-md-4 d-flex animated fadeIn fast ">
+            <div class="blog-entry align-self-stretch">
+                <div class="text-sm-center py-3">
+                    <img [src]="p.fotoUrl" class="img-fluid animated fadeInDown" alt="Colorlib Template">
+                    <div class="meta">
+                        <div><a>Precio :  S/  </a></div>
+                        <div><a>{{ p.precio  }}</a></div>
+                        <div></div>
+                        <div><a class="meta-chat m-xl-2"><span class="icon-chat"></span> 3</a></div>
                     </div>
+                    <h6 class="heading mt-1">
+                        <a><strong> {{ p.titulo }}</strong></a>
+                    </h6>
+                    <p>
+                        {{ p.DesBreve | slice:0:50 }} <strong> <span>...ver mas</span> </strong>
+                    </p>
+                    <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                        <a [routerLink]="['/reserva', p.productoId]" class="btn btn-block btn-outline-info px-4 py-3">
+                                REALIZAR RESERVA
+                        </a>
+                    </p>
                 </div>
             </div>
-            <div class="col-md-3 ftco-animate">
-            </div> -->
-        <!-- <div *ngFor="let c of categorias" class="col-md-4 ftco-animate">
-                <a class="work-entry">
-                    <img src="assets/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
-                    <div class="info d-flex align-items-center">
-                        <div>
-                            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-                                <span class="icon-search"></span>
-                            </div>
-                            <h3>{{ c.titulo }}</h3>
-                        </div>
-                    </div>
-                </a>
-            </div> -->
-
-
+        </div>
     </div>
 
 
