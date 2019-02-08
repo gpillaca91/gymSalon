@@ -1,8 +1,8 @@
-<div class="hero-wrap js-fullheight" style="background-image: url('assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+<div class="hero-wrap js-fullheight animated fadeIn " style="background-image: url('assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-            <div class="col-md-8 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+            <div class="col-md-8 animated fadeIn text-center" data-scrollax=" properties: { translateY: '70%' }">
                 <div class="icon">
                     <a href="index.html" class="logo">
                         <span class="flaticon-flower"></span>
@@ -13,9 +13,13 @@
                     BEAUTY at HOME
 
                 </h1>
-                <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Created by <a href="#">GianmarcoPillaca.com</a></p>
+                <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Created by
+                    <a></a>
+                </p>
 
-                <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a class="btn btn-white btn-outline-white px-4 py-3">Ver nuestros Servicios</a></p>
+                <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+                    <a [routerLink]="['services']" class="btn btn-white btn-outline-white px-4 py-3">Ver nuestros Servicios</a>
+                </p>
             </div>
         </div>
     </div>

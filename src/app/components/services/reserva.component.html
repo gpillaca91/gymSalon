@@ -1,43 +1,42 @@
 <section class="ftco-section ftco-appointment animated fadeIn">
 
     <div class="overlay animated fadeInDown fast">
-        <p class="text-center my-5 mx-lg-5">
-            <a [routerLink]="['/services']" class="btn btn-info-gm py-1 px-2">
-                << Atras </a>
-        </p>
+
     </div>
     <div class="container animated fadeInUpMenu">
 
         <div class="row d-md-flex align-items-center">
             <!-- Informacion de Atencion -->
 
-            <div class="col-md-6 d-flex align-self-stretch ftco-animate">
-                <div class="appointment-info text-center p-5">
+            <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+                <div class="appointment-info text-center p-4">
                     <div class="mb-4">
-                        <h3 class="mb-3">Direccion</h3>
-                        <p> Av. La molina 3554 , San Francisco, La Molina, Peru - Lima</p>
+                        <p class="text-center my-4 mx-lg-4">
+                            <a [routerLink]="['/services']" class="btn btn-dark py-1 px-2">
+                                <<< Regresar </a>
+                        </p>
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-5">
                         <h3 class="mb-3">Telefonos</h3>
                         <p class="day"><strong>(01) 123 4563</strong> or <strong>000 987 654 111</strong></p>
                     </div>
                     <div>
                         <h3 class="mb-3">Horaio de Atencion</h3>
-                        <p class="day"><strong>Lunes - Viernes</strong></p>
+                        <p class="day"><strong>Lunes - Sabados</strong></p>
                         <span>08:00 am - 09:00 pm</span>
                     </div>
                 </div>
             </div>
 
             <!--Formulario de Reserva-->
-            <div class="col-md-6 appointment pl-md-5 ftco-animate">
+            <div class="col-md-7 appointment-info text-center p-5 pl-md-5 ftco-animate">
 
-                <h3 class="mb-3">Realizar - Reservas </h3>
+                <h3 class="mb-3">Realiza tu Reserva </h3>
 
                 <form [formGroup]="forma" (ngSubmit)="enviarForm()" class="appointment-form">
                     <div class="row form-group d-flex">
                         <div class="col-md-6">
-                            <input type="text" class="form-control is-invalid" (keypress)="soloLetras($event)" placeholder="Nombre Completo" [(ngModel)]="reserva.nombres" formControlName="nombres">
+                            <input type="text" class="form-control" [ngClass]="{'is-invalid': forma.get('nombres').errors?.required }" (keypress)="soloLetras($event)" placeholder="Nombre Completo" [(ngModel)]="reserva.nombres" formControlName="nombres">
                             <div *ngIf="forma.get('nombres').errors?.required" class="invalid-feedback text-left">
                                 <p>Este campo es obligatorio,ingrese un nombre</p>
                             </div>
@@ -90,20 +89,11 @@
                             <button class="btn btn-info-gm" type="button" data-toggle="collapse" data-target="#credito" aria-expanded="false" aria-controls="credito">
                                           Opciones de Pago / Tarjetas de Credito
                             </button>
-                            <!-- <button class="btn btn-info-gm" type="button" data-toggle="collapse" data-target="#efectivo" aria-expanded="false" aria-controls="efectivo">
-                                    Deposito Efectivo
-                      </button> -->
                         </p>
-
-                        <!-- <div class="collapse multi-collapse" id="efectivo">
-                            <h5>Pago efectivo</h5>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro distinctio rem blanditiis architecto dolore nulla deserunt tempore itaque dolorum tenetur molestiae, consequuntur nam quasi. Magni perferendis incidunt numquam
-                                magnam? Exercitationem?</p>
-                        </div> -->
                         <div class="collapse multi-collapse" id="credito">
 
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 img-thumbnail">
                                     <img src="assets/images/pago/pagos.png" class="img-fluid" alt="Colorlib template">
                                 </div>
                             </div>
@@ -113,43 +103,58 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <select class="form-control color-fondo" id="cuotas">
-                                                        <option class="color-fondo"># Cuotas</option>    
+                                                    <option class="color-fondo" value="null"># Cuotas</option>    
+                                                        <option class="color-fondo"  [value]="c"*ngFor="let c of arrayCuotas" >{{ c }} Meses</option>    
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <select class="form-control color-fondo" id="cuotas">
-                                                        <option class="color-fondo">Tipo de tarjeta</option>    
+                                                        <option class="color-fondo" value="null">Tipo de tarjeta</option>    
+                                                        <option class="color-fondo" [value]="t.codigo" *ngFor="let t of arrayTarjetas">{{ t.nombre }}</option>    
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <!-- [(ngModel)]="reserva.numTarjeta" formControlName="numTarjeta" -->
-                                            <input type="text" class="form-control" placeholder="Numero de la tarjeta">
+                                            <input type="text" class="form-control is-invalid" [(ngModel)]="reserva.numeroTarjeta" (keypress)="soloNumeros($event)" placeholder="Numero de la tarjeta" formControlName="numTarjeta">
+                                            <div *ngIf="forma.get('numTarjeta').errors?.required" class="invalid-feedback text-left">
+                                                <strong>Ingrese el numero de su Tarjeta.</strong>
+                                            </div>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <input type="text" class="form-control" placeholder="Codigo CVV (3-4 digitos en la parte trasera de la tarjeta)">
+                                            <input type="text" class="form-control is-invalid" [(ngModel)]="reserva.codigoCVV" (keypress)="soloNumeros($event)" placeholder="Codigo CVV" formControlName="codigoCVV">
+                                            <div class="invalid-feedback text-left" *ngIf="forma.get('codigoCVV').errors?.required">
+                                                <strong>Ingrese el CVV de su Tarjeta.</strong>
+                                            </div>
+                                            <div class="invalid-feedback text-left" *ngIf="forma.get('codigoCVV').errors?.maxlength">
+                                                <strong>(Maximo 4 digitos en la parte trasera de la tarjeta).</strong>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <select class="form-control color-fondo">
-                                                                <option class="color-fondo">Mes de expiracion</option>    
-                                                    </select>
+                                                <option class="color-fondo" value="null">Mes de expiracion</option>    
+                                                <option class="color-fondo" [value]="m.codigo" *ngFor="let m of arrayMes">{{ m.nombre }}</option>    
+                                            </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <select class="form-control color-fondo">
-                                                                <option class="color-fondo">Año de expiracion</option>    
-                                                    </select>
+                                                    <option class="color-fondo" value="null">Año de expiracion</option>    
+                                                <option class="color-fondo" [value]="a" *ngFor="let a of arrayAnio">{{ a }}</option>    
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-
-                                            <input type="text" class="form-control" placeholder="Nombre del titular" [(ngModel)]="reserva.titular" formControlName="titular">
+                                            <input type="text" class="form-control is-invalid" [(ngModel)]="reserva.titular" (keypress)="soloLetras($event)" placeholder="Nombre del titular" [(ngModel)]="reserva.titular" formControlName="titular">
+                                            <div class="invalid-feedback text-left" *ngIf="forma.get('titular').errors?.required">
+                                                <strong>Ingrese el nombre del Titular.</strong>
+                                            </div>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <input type="text" class="form-control" placeholder="Apellido del titular">
+                                            <input type="text" class="form-control" (keypress)="soloLetras($event)" placeholder="Apellido del titular">
                                         </div>
                                     </div>
 
@@ -163,13 +168,14 @@
 
 
                     <div class="form-group">
-
+                        <!--  -->
                         <input type="submit" [disabled]="!forma.valid" value="Confirmar Pago" class="btn btn-white btn-outline-white py-3 px-4">
                     </div>
 
                 </form>
                 <!-- {{ forma.valid }} -->
             </div>
+            <div class="col-md-2"></div>
 
 
         </div>

@@ -2,7 +2,20 @@
 
 <section class="ftco-section" *ngIf="_productoService.cargoData">
     <div class="container">
-        <div class="row">
+        <div class="row d-flex">
+            <div class="col">
+
+                <h4 class="mb-3 text-center">
+                    <p>
+                        Elige el mejor <strong>servicio</strong> , segun tu necesidad.
+
+                    </p>
+
+                </h4>
+                <hr>
+            </div>
+        </div>
+        <div class="row my-3">
 
             <div *ngFor="let p of _productoService.servicios" class="col-md-4 ftco-animate puntero animated fadeIn ">
 
@@ -11,11 +24,16 @@
                         <div class="icon d-flex mb-3">
                             <span [class]="p.ficon"></span>
                         </div>
+                        <div class="media-body">
+                            <h3 class="heading">{{ p.servicio }}</h3>
+                            <p>
+                                <span>
+                                    {{ p.descripcion | slice:0:105}} <strong>    Leer mas ....</strong>
+                                </span>
+                            </p>
+                        </div>
                     </a>
-                    <div class="media-body">
-                        <h3 class="heading">{{ p.servicio }}</h3>
-                        <p>{{ p.descripcion }}</p>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -28,10 +46,12 @@
     <div class="container">
         <div class="row justify-content-end">
             <div class="col-md-5 discount ftco-animate">
-                <h3>Save up to 25% Off</h3>
-                <h2 class="mb-4">Student Discount</h2>
-                <p class="mb-4">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                <p><a href="#" class="btn btn-white btn-outline-white px-4 py-3">Book Now</a></p>
+                <h3>Ahorre hasta un 25% de descuento</h3>
+                <h2 class="mb-4">DESCUENTO PARA ESTUDIANTES</h2>
+                <p class="mb-4 text-justify">
+                    Si busca un Salón en el que pueda ser usted mismo y también ir a la Moda, entonces ha venido al lugar correcto. Nuestros Estilistas le aconsejarán para sacarle el máximo partido a su imagen, con un toque Actual y Personal. Trabajamos con las mejores marcas
+                    como WELLA y COQUETTE para asegurarse de que su cabello se convertirá y queda en las mejores condiciones.</p>
+                <p><a [routerLink]="['/categoriaServicio','300']" class="btn btn-white btn-outline-white px-4 py-3">reservar ahora                    </a></p>
             </div>
         </div>
     </div>

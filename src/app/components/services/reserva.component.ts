@@ -17,17 +17,73 @@ export class ReservaComponent implements OnInit {
 
   forma:FormGroup;  
   id:string;
+  arrayCuotas:number[] = [1,2,3,4,5,6,7,8,9,10,11,12];
+  arrayTarjetas:any[] = [{
+    codigo : 'VS001',
+    nombre :'visa'
+  },{
+    codigo : 'MC001',
+    nombre :'Mastercard'
+  },{
+    codigo : 'DI001',
+    nombre :'Diners'
+  },{
+    codigo : 'AE001',
+    nombre :'American Express'
+  },];
+  arrayMes:any[] = [{
+    codigo : '1',
+    nombre :'Enero'
+  },{
+    codigo : '2',
+    nombre :'Febrero'
+  },{
+    codigo : '3',
+    nombre :'Marzo'
+  },{
+    codigo : '4',
+    nombre :'Abril'
+  },{
+    codigo : '5',
+    nombre :'Mayo'
+  },{
+    codigo : '6',
+    nombre :'Junio'
+  },{
+    codigo : '7',
+    nombre :'Julio'
+  },{
+    codigo : '8',
+    nombre :'Agosto'
+  },{
+    codigo : '9',
+    nombre :'Septiembre'
+  },{
+    codigo : '10',
+    nombre :'Octubre'
+  },{
+    codigo : '11',
+    nombre :'Noviembre'
+  },{
+    codigo : '12',
+    nombre :'Diciembre'
+  },];
+  arrayAnio:number[]=[];
+  
   reserva:Reserva = {
      nombres: '',
      apellidos: '',
      correo : '',
-     fecha : null,
+     fecha : new Date(),
      contacto: '',
      mensaje:'',
      productoId:'',
      titular:'',
-   }; 
+     numeroTarjeta:'',
+     codigoCVV:'',
+  }; 
    
+
   constructor( public _ps:ProductoService,private ar:ActivatedRoute,private route:Router  ) { 
     this.crearControles();
 
@@ -38,23 +94,29 @@ export class ReservaComponent implements OnInit {
      
     this.mostrarCalendario(); 
     // this.forma.setValue( this.reserva );
-  
   }
 
   ngOnInit() {
+    for (let index = new Date().getFullYear() ; index < 2031; index++) {
+        this.arrayAnio.push(index);
+    }
   }
   crearControles(){
     this.forma = new FormGroup({
       'nombres': new FormControl(''),
       'apellidos': new FormControl(''),
-      'correo': new FormControl('',[Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'),Validators.required]),
+      'correo': new FormControl('',[Validators.pattern("([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)"),Validators.required]),
       'fecha': new FormControl('',Validators.required),
       'contacto': new FormControl('',[Validators.required,Validators.maxLength(9),Validators.minLength(7)] ),
       'mensaje': new FormControl(''),
       'titular': new FormControl(''),
+      'numTarjeta': new FormControl(''),
+      'codigoCVV': new FormControl(''),
     });
     this.forma.get('nombres').setValidators(Validators.required);
     this.forma.get('titular').setValidators(Validators.required);
+    this.forma.get('numTarjeta').setValidators(Validators.required);
+    this.forma.get('codigoCVV').setValidators([Validators.required,Validators.maxLength(4)]);
   }
 
 
@@ -95,7 +157,6 @@ export class ReservaComponent implements OnInit {
   }
   soloNumeros(event:any){
     let res=  (event.charCode === 8 || event.charCode === 0) ? null : event.charCode >= 48 && event.charCode <= 57; 
-    console.log(res);
     return res; 
   }
   soloLetras(e:any){

@@ -7,5 +7,7 @@ export interface Reserva{
     contacto:string;
     mensaje:string;
     titular:string;
+    numeroTarjeta:string;
+     codigoCVV:string;
   // tslint:disable-next-line:eofline
   } 

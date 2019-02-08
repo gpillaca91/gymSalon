@@ -1,11 +1,22 @@
-<section class="ftco-section animated fadeIn">
+<section class="ftco-section animated fadeIn m-0">
     <div class="container">
         <div class="row d-flex">
-            <div class="col-md-6 d-flex ftco-animate">
-                <div class="img img-about align-self-stretch" style="background-image: url(assets/images/bg_3.jpg); width: 100%;"></div>
+            <div class="col">
+                <h3 class="mb-3 text-center">
+                    <strong> SOBRE NOSOTRAS </strong>
+                </h3>
+                <hr>
             </div>
-            <div class="col-md-6 pl-md-5 ftco-animate text-justify">
-                <h2 class="mb-4">Bienvenido al sitio web de <small>Beauty Inside - UPC</small> </h2>
+        </div>
+        <div class="row d-flex m-2">
+            <div class="col-md-7 d-flex animated fadeIn">
+                <!--  -->
+                <div class="img img-about img-fluid img-thumbnail align-self-stretch" style="background-image: url(assets/images/zzz.jpg); width: 100%;">
+
+                </div>
+            </div>
+            <div class="col-md-5 pl-md-4 text-justify">
+                <h3 class="mb-4">Bienvenido al sitio web de <small>Beauty at Home </small> </h3>
                 <p>Con una experiencia y trayectoria de más de 25 años en el medio, y cursos en el exterior con las últimas técnicas y tendencias en Asesoría de Imagen, Belleza, y Peluquería; con un gran equipo profesional, y con el respaldo de las mejores
                     marcas importadas en productos de belleza; ofrece a su distinguidos clientes un novedoso Salón spa, en la mejor ubicación de Lima, con modernos y elegantes espacios, diseñados especialmente para su comodidad y relajación..!</p>
                 <span class="info text-center "><strong> MISIÓN</strong></span>
@@ -28,7 +39,9 @@
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section ftco-animate text-center">
                 <h2 class="mb-4">Nuestros expertos de belleza</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <p>
+                    En BEAUTY AT HOME contamos con profesionales de primer nivel para el cuidado y la belleza, con el respaldo de productos de primera línea. Si deseas ideas acerca de mejorar tu belleza, tenemos creatividad para hacer realidad tu nuevo LOOK. Te esperamos.
+                </p>
             </div>
         </div>
         <div class="row">
@@ -42,7 +55,7 @@
                         <h3>{{ trabajador.nombreCompleto }}</h3>
                         <span class="position ">{{ trabajador.cargo }}</span>
                         <div class="text ">
-                            <p>{{ trabajador.descripcion }}</p>
+                            <p>{{ trabajador.descripcion | slice:0:90 }} <strong> Leer mas ....</strong></p>
                             <h6><a href="#">{{ trabajador.titwer }}</a></h6>
                         </div>
 

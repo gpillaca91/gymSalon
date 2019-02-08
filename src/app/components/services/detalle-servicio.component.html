@@ -5,13 +5,16 @@
 
         <div class="row">
             <p>
-                <button [routerLink]="['/services']" class="btn btn-info-gm mx-1 py-1"><< Atras</button>
+                <button [routerLink]="['/services']" class="btn btn-info-gm mx-1 py-1"><<< Regresar</button>
             </p>
         </div>
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center ftco-animate">
 
-                <h2 class="mb-4">Categorias</h2>
+                <h2 class="mb-5">
+                    <strong> Categorias </strong>
+                </h2>
+                <hr>
                 <span class="work-category">
                   <div class="tagcloud">
                       <span *ngFor="let c of categorias" class="px-2 animated fadeIn fast">
