@@ -105,7 +105,7 @@ export class ReservaComponent implements OnInit {
     this.forma = new FormGroup({
       'nombres': new FormControl(''),
       'apellidos': new FormControl(''),
-      'correo': new FormControl('',[Validators.pattern("([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)"),Validators.required]),
+      'correo': new FormControl('',[Validators.pattern('([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)'),Validators.required]),
       'fecha': new FormControl('',Validators.required),
       'contacto': new FormControl('',[Validators.required,Validators.maxLength(9),Validators.minLength(7)] ),
       'mensaje': new FormControl(''),
@@ -138,7 +138,7 @@ export class ReservaComponent implements OnInit {
   }  
   mostrarModal(){
     swal({
-      title: 'Correcto!',
+      title: 'FELICIDADES',
       text: 'Su reserva fue registrada!',
       icon: 'success',
       buttons:false,

@@ -121,40 +121,40 @@
             </div>
             <div class="row animated fadeIn fast">
                 <div class="col-md-4 ftco-animate">
-                    <a href="#" class="work-entry">
+                    <a [routerLink]="['/services']" class="work-entry">
                         <img src="assets/images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="info d-flex align-items-center">
                             <div>
                                 <div class="icon mb-4 d-flex align-items-center justify-content-center">
                                     <span class="icon-search"></span>
                                 </div>
-                                <h3>Lips Makeover</h3>
+                                <h3>CAMBIO DE LABIOS</h3>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4 ftco-animate">
-                    <a href="#" class="work-entry">
+                    <a [routerLink]="['/services']" class="work-entry">
                         <img src="assets/images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="info d-flex align-items-center">
                             <div>
                                 <div class="icon mb-4 d-flex align-items-center justify-content-center">
                                     <span class="icon-search"></span>
                                 </div>
-                                <h3>Hair Style</h3>
+                                <h3>PEINADO</h3>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4 ftco-animate">
-                    <a href="#" class="work-entry">
+                    <a [routerLink]="['/services']" class="work-entry">
                         <img src="assets/images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
                         <div class="info d-flex align-items-center">
                             <div>
                                 <div class="icon mb-4 d-flex align-items-center justify-content-center">
                                     <span class="icon-search"></span>
                                 </div>
-                                <h3>Makeup</h3>
+                                <h3>MAQUILLAJE</h3>
                             </div>
                         </div>
                     </a>
@@ -164,8 +164,18 @@
     </section>
     <!-- Marcas Reconocidas -->
     <section class="ftco-partner bg-light animated fadeIn fast">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center mb-3">
+                    <strong>NUESTROS ALIADOS</strong>
+                </p>
+            </div>
+
+        </div>
         <div class="container">
+
             <div class="row partner justify-content-center">
+
                 <div class="col-md-10">
 
 
@@ -210,55 +220,53 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 ftco-animate">
+                <div class="col-md-4 animated fadeInDown">
                     <div class="pricing-entry pb-5 text-center">
                         <div>
-                            <h3 class="mb-4">Basic</h3>
-                            <p><span class="price"> S/ 24.50</span> <span class="per">/ one trip</span></p>
+                            <h3 class="mb-4">Basico</h3>
+                            <p><span class="price"> S/ 44.50</span></p>
                         </div>
                         <ul>
-                            <li>Nail Cutting &amp; Styling</li>
-                            <li>Hair Trimming</li>
-                            <li>Spa Therapy</li>
-                            <li>Body Massage</li>
+                            <li>Corte de uñas</li>
+                            <li>Corte de pelo</li>
                             <li>Manicure</li>
                         </ul>
-                        <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Reservar Ahora</a></p>
+                        <p class="button text-center"><a [routerLink]="['/reserva','PROM-1-01']" class="btn btn-primary btn-outline-primary px-4 py-3">Reservar Ahora</a></p>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
+                <div class="col-md-4 animated fadeInDown">
                     <div class="pricing-entry pb-5 text-center">
                         <div>
-                            <h3 class="mb-4">Standard</h3>
-                            <p><span class="price">S/ 34.50</span> <span class="per">/ one trip</span></p>
+                            <h3 class="mb-4">Estandar</h3>
+                            <p><span class="price">S/ 64.50</span></p>
                         </div>
                         <ul>
-                            <li>Nail Cutting &amp; Styling</li>
-                            <li>Hair Trimming</li>
-                            <li>Spa Therapy</li>
-                            <li>Body Massage</li>
+                            <li>Estilo de corte de uñas</li>
+                            <li>Corte de pelo</li>
+                            <li>Hidratacion Capilar</li>
                             <li>Manicure</li>
                         </ul>
-                        <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Reservar Ahora</a></p>
+                        <p class="button text-center"><a [routerLink]="['/reserva','PROM-2-01']" class="btn btn-primary btn-outline-primary px-4 py-3">Reservar Ahora</a></p>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
+                <div class="col-md-4 animated fadeInDown">
                     <div class="pricing-entry active pb-5 text-center">
                         <div>
                             <h3 class="mb-4">Premium</h3>
-                            <p><span class="price">S/ 54.50</span> <span class="per">/ one trip</span></p>
+                            <p><span class="price">S/ 99.90</span></p>
                         </div>
                         <ul>
-                            <li>Nail Cutting &amp; Styling</li>
-                            <li>Hair Trimming</li>
-                            <li>Spa Therapy</li>
-                            <li>Body Massage</li>
+                            <li>Estilo de corte de uñas / Gel</li>
+                            <li>Corte de pelo / con peinado</li>
+                            <li>Hidratacion Capilar</li>
+                            <li>Depilacion con cera</li>
                             <li>Manicure</li>
+                            <li>Pedicure</li>
                         </ul>
-                        <p class="button text-center"><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">Reservar Ahora</a></p>
+                        <p class="button text-center"><a [routerLink]="['/reserva','PROM-3-01']" class="btn btn-primary btn-outline-primary px-4 py-3">Reservar Ahora</a></p>
                     </div>
                 </div>
-                <div class="col-md-3 ftco-animate">
+                <!-- <div class="col-md-3 ftco-animate">
                     <div class="pricing-entry pb-5 text-center">
                         <div>
                             <h3 class="mb-4">Platinum</h3>
@@ -273,7 +281,7 @@
                         </ul>
                         <p class="button text-center"><a class="btn btn-primary btn-outline-primary px-4 py-3">Reservar Ahora</a></p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
