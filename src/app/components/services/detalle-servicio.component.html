@@ -18,9 +18,9 @@
                 <span class="work-category">
                   <div class="tagcloud">
                       <span *ngFor="let c of categorias" class="px-2 animated fadeIn fast">
-                          <a class="tag-cloud-link active puntero"  (click)="mostrarProductos(c.id)"  >
+                          <button class="btn btn-outline-black tag-cloud-link active puntero my-1"  (click)="mostrarProductos(c.id)"  >
                             {{ c.titulo }}
-                          </a>
+                          </button>
                         </span>
             </div>
             </span>
